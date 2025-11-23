@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Juned Mulla — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Juned Mulla</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Hi — I'm Juned</h2>
+      <p>Student • Developer • UI/UX enthusiast</p>
+      <a class="cta" href="about.html">Learn more</a>
+    </section>
+
+    <section class="projects">
+      <h3>Selected Projects</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Expense Tracker (Flutter)</h4>
+          <p>Mobile app to manage expenses with beautiful UI.</p>
+        </article>
+        <article class="card">
+          <h4>FinalBankManagementSystem</h4>
+          <p>Java + JSP + Hibernate banking system with CRUD ops.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Juned Mulla — <a href="#">Contact</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
