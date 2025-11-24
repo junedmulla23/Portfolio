@@ -2,27 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Pull from GitHub') {
+        stage('Checkout SCM') {
             steps {
-                git branch: 'main', url: 'https://github.com/junedmulla23/Portfolio.git'
+                checkout scm
             }
         }
 
-        stage('Build & Deploy') {
+        stage('Deploy to Tomcat') {
             steps {
-                echo 'Deploying website to Jenkins workspace...'
-                bat 'mkdir C:\\inetpub\\wwwroot\\portfolio || echo folder exists'
-                bat 'xcopy /s /y * C:\\inetpub\\wwwroot\\portfolio'
+                echo "Deploying Portfolio Website..."
+                bat """
+                    xcopy * "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\portfolio\\" /E /Y
+                """
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Deployment Successful!'
-        }
-        failure {
-            echo 'Deployment Failed!'
         }
     }
 }
